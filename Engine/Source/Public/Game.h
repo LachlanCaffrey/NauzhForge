@@ -1,0 +1,73 @@
+#pragma once
+
+// Forward declaration
+struct SDL_Window;
+struct SDL_Renderer;
+class Texture;
+
+class Game {
+public:
+	// Get the game singleton or create one if it doesn't exist
+	static Game* GetGame();
+
+	// Deallocate the game from memory (do not use to exit game, 
+	// should only be used inside source)
+	static void DestroyGame();
+
+	// Runs the game
+	void Run() { Initialise(); }
+
+	// Exit the app
+	void QuitApp() { m_IsGameOpen = false; }
+
+private:
+	// Constructor runs when the class is created
+	// It is also needed to create a new object
+	Game();
+	// Destructor runs when the class is destroyed/deleted
+	~Game();
+
+	// Core Game Functions:
+ 
+	// Initialise the dependencies/external libraries
+	// and will exit the game if any fail
+	void Initialise();
+
+	// This will run the post-initialise functions relying on dependencies
+	// loading the window or any start game functions
+	void Start();
+
+	// Run the game loop functions of the game until the app closes
+	void GameLoop();
+
+	// Deallocates memoryu after game loops has been exited
+	void Cleanup();
+	
+	// Game Loop: 
+
+	// Listen for and process user input
+	void ProcessInput();
+
+	// Update game logic based on player input
+	// No rendering here, logic should updte first, then display results
+	void Update();
+
+	// Display results and render graphics to screen based on logic
+	void Render();
+
+	// Any objects marked for delete will be deallocated from memory here
+	void CollectGarbage();
+
+private:
+	// Flag that decides when the game loop ends
+	bool m_IsGameOpen;
+
+	// Stores the window for the app/game in a pointer
+	SDL_Window* m_WindowRef;
+
+	// Stores the renderer for the SDL window in a pointer
+	SDL_Renderer* m_RendererRef;
+
+	// DEBUG TESTING VARIABLES
+	Texture* m_TestTexture1;
+};
