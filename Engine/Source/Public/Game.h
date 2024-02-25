@@ -1,9 +1,13 @@
 #pragma once
+#include "EngineTypes.h"
 
 // Forward declaration
 struct SDL_Window;
 struct SDL_Renderer;
 class Texture;
+
+// DEBUG
+class Animation;
 
 class Game {
 public:
@@ -14,11 +18,17 @@ public:
 	// should only be used inside source)
 	static void DestroyGame();
 
-	// Runs the game
+	// Run the game
 	void Run() { Initialise(); }
 
 	// Exit the app
 	void QuitApp() { m_IsGameOpen = false; }
+
+	// Importing a texture to the game
+	Texture* ImportTexture(const char* PathToFile);
+
+	// Safe destroy the texture
+	void DestroyTexture(Texture* TextureToDestroy);
 
 private:
 	// Constructor runs when the class is created
@@ -68,6 +78,17 @@ private:
 	// Stores the renderer for the SDL window in a pointer
 	SDL_Renderer* m_RendererRef;
 
+	// Going to store all textures in the game
+	TArray<Texture*> m_TextureStack;
+
 	// DEBUG TESTING VARIABLES
-	Texture* m_TestTexture1;
+	Animation* m_TestAnim1;
+	Animation* m_TestAnim2;
+	Animation* m_TestAnim3;
+	Animation* m_TestAnim4;
+	Animation* m_TestAnim5;
+	Animation* m_TestAnim6;
+	Animation* m_TestAnim7;
+	Animation* m_TestAnim8;
+	Animation* m_TestAnim9;
 };

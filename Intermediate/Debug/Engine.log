@@ -1,9 +1,26 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(502,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(503,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
   Game.cpp
-C:\Users\13411\source\repos\NauzhForge\Engine\Source\Private\Game.cpp(93,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\13411\source\repos\NauzhForge\Engine\Source\Private\Game.cpp(94,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  Engine.vcxproj -> C:\Users\13411\source\repos\NauzhForge\Build\Debug\Engine.exe
-  C:\Users\13411\source\repos\NauzhForge\Engine\ExternalLibs\DynamicLibs\SDL2.dll
-  C:\Users\13411\source\repos\NauzhForge\Engine\ExternalLibs\DynamicLibs\SDL2_image.dll
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(173,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(173,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(180,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(180,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(187,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(187,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(194,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(194,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(201,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(201,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(208,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(208,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(215,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(215,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(222,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(222,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(229,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(229,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\Game.cpp(253,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Engine.vcxproj -> C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Build\Debug\Engine.exe
+  C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\ExternalLibs\DynamicLibs\SDL2.dll
+  C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\ExternalLibs\DynamicLibs\SDL2_image.dll
           2 file(s) copied.
