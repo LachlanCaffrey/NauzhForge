@@ -3,7 +3,11 @@
 #include "SDL2/SDL.h"
 #include "Debug.h"
 #include "Graphics/Texture.h"
+#include "Input.h"
+
+// DEBUG
 #include "Graphics/Animation.h"
+#include "Math/Vector2.h"
 
 Game* Game::GetGame()
 {
@@ -97,15 +101,6 @@ Game::Game()
 
 	// DEBUG VARIABLES
 	m_TestAnim1 = nullptr;
-	m_TestAnim2 = nullptr;
-	m_TestAnim3 = nullptr;
-	m_TestAnim4 = nullptr;
-	m_TestAnim5 = nullptr;
-	m_TestAnim6 = nullptr;
-	m_TestAnim7 = nullptr;
-	m_TestAnim8 = nullptr;
-	m_TestAnim9 = nullptr;
-
 }
 
 Game::~Game()
@@ -147,6 +142,9 @@ void Game::Start()
 		return;
 	}
 
+	// Create the game input
+	m_GameInput = new Input();
+
 	// Create renderer and check if it failed
 	m_RendererRef = SDL_CreateRenderer(m_WindowRef, -1, 0);
 
@@ -172,63 +170,6 @@ void Game::Start()
 
 	m_TestAnim1->SetPosition(640.0f, 360.0f);
 	m_TestAnim1->SetScale(2.0f);
-
-	m_TestAnim2 = new Animation();
-	m_TestAnim2->CreateAnimation("Content/Sprites/Main Ship/Main Ship - Shields/PNGs/Main Ship - Shields - Front and Side Shield.png",
-		&AnimParams);
-
-	m_TestAnim2->SetPosition(64.0f, 64.0f);
-	m_TestAnim2->SetScale(2.0f);
-
-	m_TestAnim3 = new Animation();
-	m_TestAnim3->CreateAnimation("Content/Sprites/Main Ship/Main Ship - Shields/PNGs/Main Ship - Shields - Front Shield.png",
-		&AnimParams);
-
-	m_TestAnim3->SetPosition(1200.0f, 64.0f);
-	m_TestAnim3->SetScale(2.0f);
-
-	m_TestAnim4 = new Animation();
-	m_TestAnim4->CreateAnimation("Content/Sprites/Main Ship/Main Ship - Shields/PNGs/Main Ship - Shields - Invincibility Shield.png",
-		&AnimParams);
-
-	m_TestAnim4->SetPosition(1200.0f, 640.0f);
-	m_TestAnim4->SetScale(2.0f);
-
-	m_TestAnim5 = new Animation();
-	m_TestAnim5->CreateAnimation("Content/Sprites/Kla'ed/Shield/PNGs/Kla'ed - Bomber - Shield.png",
-		&AnimParams);
-	
-	m_TestAnim5->SetPosition(64.0f, 640.0f);
-	m_TestAnim5->SetScale(2.0f);
-	
-	m_TestAnim6 = new Animation();
-	m_TestAnim6->CreateAnimation("Content/Sprites/Kla'ed/Destruction/PNGs/Kla'ed - Bomber - Destruction.png",
-		&AnimParams);
-
-	m_TestAnim6->SetPosition(640.0f, 64.0f);
-	m_TestAnim6->SetScale(2.0f);
-	
-	m_TestAnim7 = new Animation();
-	m_TestAnim7->CreateAnimation("Content/Sprites/Kla'ed/Destruction/PNGs/Kla'ed - Frigate - Destruction.png",
-		&AnimParams);
-
-	m_TestAnim7->SetPosition(640.0f, 640.0f);
-	m_TestAnim7->SetScale(2.0f);
-
-	m_TestAnim8 = new Animation();
-	m_TestAnim8->CreateAnimation("Content/Sprites/Kla'ed/Engine/PNGs/Kla'ed - Bomber - Engine.png",
-		&AnimParams);
-
-	m_TestAnim8->SetPosition(64.0f, 320.0f);
-	m_TestAnim8->SetScale(2.0f);
-
-	m_TestAnim9 = new Animation();
-	m_TestAnim9->CreateAnimation("Content/Sprites/Kla'ed/Weapons/PNGs/Kla'ed - Torpedo Ship - Weapons.png",
-		&AnimParams);
-
-	m_TestAnim9->SetPosition(1200.0f, 320.0f);
-	m_TestAnim9->SetScale(2.0f);
-
 	GameLoop();
 }
 
@@ -275,16 +216,7 @@ void Game::Cleanup()
 
 void Game::ProcessInput()
 {
-	// Data type that reads the SDL input events for the window
-	SDL_Event InputEvent;
-
-	// Run through each input in that frame
-	while (SDL_PollEvent(&InputEvent)) {
-		// If the cross button (exit button) is pressed on the window, close the app
-		if (InputEvent.type == SDL_QUIT) {
-			QuitApp();
-		}
-	}
+	m_GameInput->ProcessInput();
 }
 
 void Game::Update()
@@ -300,33 +232,41 @@ void Game::Update()
 	// Set the last tick time
 	LastTickTime = CurrentTickTime;
 
+	// DEBUG
+	// Position of the animation on the screen
+	static Vector2 Position(640.0f, 360.0f);
+	// Spead of the movement
+	float Speed(100.0f * (float)DeltaTime);
+	// Direction to move in
+	Vector2 MovementDirection(0.0f);
+
+	// Assigning direction to key
+	// with "+=", when two keys are down they cancel
+	if (m_GameInput->IsKeyDown(NF_KEY_W)) {
+		MovementDirection.y += -1.0f;
+	}
+
+	if (m_GameInput->IsKeyDown(NF_KEY_S)) {
+		MovementDirection.y += 1.0f;
+	}
+
+	if (m_GameInput->IsKeyDown(NF_KEY_A)) {
+		MovementDirection.x += -1.0f;
+	}
+
+	if (m_GameInput->IsKeyDown(NF_KEY_D)) {
+		MovementDirection.x += 1.0f;
+	}
+
+	// Move the animation to the right
+	// move to left is "-=", move up and down replace "x with y"
+	// move diagonal use both
+	Position += MovementDirection * Speed; 
+
 	// TODO: Udpate game logic
 	if (m_TestAnim1 != nullptr) {
+		m_TestAnim1->SetPosition(Position.x, Position.y);
 		m_TestAnim1->Update((float)DeltaTime);
-	}
-	if (m_TestAnim2 != nullptr) {
-		m_TestAnim2->Update((float)DeltaTime);
-	}
-	if (m_TestAnim3 != nullptr) {
-		m_TestAnim3->Update((float)DeltaTime);
-	}
-	if (m_TestAnim4 != nullptr) {
-		m_TestAnim4->Update((float)DeltaTime);
-	}
-	if (m_TestAnim5 != nullptr) {
-		m_TestAnim5->Update((float)DeltaTime);
-	}
-	if (m_TestAnim6 != nullptr) {
-		m_TestAnim6->Update((float)DeltaTime);
-	}
-	if (m_TestAnim7 != nullptr) {
-		m_TestAnim7->Update((float)DeltaTime);
-	}
-	if (m_TestAnim8 != nullptr) {
-		m_TestAnim8->Update((float)DeltaTime);
-	}
-	if (m_TestAnim9 != nullptr) {
-		m_TestAnim9->Update((float)DeltaTime);
 	}
 }
 
