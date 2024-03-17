@@ -6,9 +6,7 @@ struct SDL_Window;
 struct SDL_Renderer;
 class Texture;
 class Input;
-
-// DEBUG
-class Animation;
+class GameObject;
 
 class Game {
 public:
@@ -30,6 +28,10 @@ public:
 
 	// Safe destroy the texture
 	void DestroyTexture(Texture* TextureToDestroy);
+
+	// Add a game object to the game
+	template<typename T>
+	T* AddGameObject();
 
 private:
 	// Constructor runs when the class is created
@@ -55,6 +57,9 @@ private:
 	void Cleanup();
 	
 	// Game Loop: 
+
+	// Checks if any objects need to be spawn
+	void PreLoop();
 
 	// Listen for and process user input
 	void ProcessInput();
@@ -85,6 +90,9 @@ private:
 	// Store the input handler for the game
 	Input* m_GameInput;
 
-	// DEBUG TESTING VARIABLES
-	Animation* m_TestAnim1;
+	// Store all game objects that need to be spawned on the next loop
+	TArray<GameObject*> m_GameObjectPendingSpawn;
+
+	// Store all of the game objects in the game
+	TArray<GameObject*> m_GameObjectStack;
 };

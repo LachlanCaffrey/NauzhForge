@@ -36,7 +36,10 @@ public:
 	float m_Angle;
 
 	// Scale of the image
-	float m_Scale;
+	float m_ScaleX, m_ScaleY;
+
+	// Determine whether or not to render the texture
+	bool m_IsVisible;
 
 private:
 	// Texture that SDL understands

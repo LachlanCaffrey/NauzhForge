@@ -11,8 +11,9 @@ Texture::Texture(SDL_Renderer* Renderer)
 	m_PosX = m_PosY = 0;
 	m_SurfaceData = nullptr;
 	m_TextureRef = nullptr;
-	m_Scale = 1.0f;
+	m_ScaleX = m_ScaleY = 1.0f;
 	m_ClipRect = nullptr;
+	m_IsVisible = true;
 }
 
 Texture::~Texture()
@@ -63,18 +64,22 @@ void Texture::CopyTexture(Texture* CopyTexture)
 
 void Texture::Draw()
 {
+	if (!m_IsVisible) {
+		return;
+	}
+
 	float ImageWidth = (float)m_SurfaceData->w;
 	float ImageHeight = (float)m_SurfaceData->h;
 
 	SDL_FRect DestRect = {
 		(float)m_PosX, (float)m_PosY,
-		ImageWidth * m_Scale, ImageHeight * m_Scale
+		ImageWidth * m_ScaleX, ImageHeight * m_ScaleY
 	};
 
 	// If we have a set clip then update the width and height of the texture
 	if (m_ClipRect != nullptr) {
-		DestRect.w = m_ClipRect->w * m_Scale;
-		DestRect.h = m_ClipRect->h * m_Scale;
+		DestRect.w = m_ClipRect->w * m_ScaleX;
+		DestRect.h = m_ClipRect->h * m_ScaleY;
 	}
 
 	// Move the texture to be centered at the middle point of the image

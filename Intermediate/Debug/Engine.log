@@ -1,12 +1,9 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(502,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(503,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  Game.cpp
-C:\Users\13411\source\repos\NauzhForge\NauzhForge\Engine\Source\Private\Game.cpp(171,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\13411\source\repos\NauzhForge\NauzhForge\Engine\Source\Private\Game.cpp(171,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\13411\source\repos\NauzhForge\NauzhForge\Engine\Source\Private\Game.cpp(194,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\13411\source\repos\NauzhForge\NauzhForge\Engine\Source\Private\Game.cpp(268,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\13411\source\repos\NauzhForge\NauzhForge\Engine\Source\Private\Game.cpp(268,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Engine.vcxproj -> C:\Users\13411\source\repos\NauzhForge\NauzhForge\Build\Debug\Engine.exe
-  C:\Users\13411\source\repos\NauzhForge\NauzhForge\Engine\ExternalLibs\DynamicLibs\SDL2.dll
-  C:\Users\13411\source\repos\NauzhForge\NauzhForge\Engine\ExternalLibs\DynamicLibs\SDL2_image.dll
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  Player.cpp
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\GameObjects\Player.cpp(27,27): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\GameObjects\Player.cpp(28,26): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
+  Engine.vcxproj -> C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Build\Debug\Engine.exe
+  C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\ExternalLibs\DynamicLibs\SDL2.dll
+  C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\ExternalLibs\DynamicLibs\SDL2_image.dll
           2 file(s) copied.
