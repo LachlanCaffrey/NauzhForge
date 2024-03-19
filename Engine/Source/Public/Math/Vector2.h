@@ -24,18 +24,18 @@ struct Vector2 {
 
 	// Boolean operators
 	// if 2 Vector2s are euqual
-	bool operator==(const Vector2& Other) {
+	bool operator==(const Vector2& Other) const {
 		return x == Other.x && y == Other.y;
 	}
 
 	// if 2 Vector2s are not equal
-	bool operator!=(const Vector2& Other) {
+	bool operator!=(const Vector2& Other) const {
 		return x != Other.x || y != Other.y;
 	}
 	
 	// Arithmetic operators
 	// Addition Vector2
-	Vector2 operator+(const Vector2& Other) {
+	Vector2 operator+(const Vector2& Other) const {
 		return Vector2(Other.x + x, Other.y + y);
 	}
 
@@ -46,7 +46,7 @@ struct Vector2 {
 	}
 
 	// Subtrtact Vector2
-	Vector2 operator-(const Vector2& Other) {
+	Vector2 operator-(const Vector2& Other) const {
 		return Vector2(x - Other.x, y - Other.y);
 	}
 
@@ -57,7 +57,7 @@ struct Vector2 {
 
 	// Multiplication
 	// Multiply Vector2 by Vector2
-	Vector2 operator*(const Vector2& Other) {
+	Vector2 operator*(const Vector2& Other) const {
 		return Vector2(x * Other.x, y * Other.y);
 	}
 
@@ -67,7 +67,7 @@ struct Vector2 {
 	}
 
 	// Multiply Vector2 by float
-	Vector2 operator*(const float& Scalar) {
+	Vector2 operator*(const float& Scalar) const {
 		return Vector2(x * Scalar, y * Scalar);
 	}
 
@@ -77,13 +77,13 @@ struct Vector2 {
 	}
 
 	// Division Vector2
-	Vector2 operator/(const Vector2& Other);
+	Vector2 operator/(const Vector2& Other) const;
 
 	// Division equals
 	Vector2 operator/=(const Vector2& Other);
 
 	// Division float
-	Vector2 operator/(const float& Scalar);
+	Vector2 operator/(const float& Scalar) const;
 
 	// Division equals float
 	Vector2 operator/=(const float& Scalar);

@@ -1,8 +1,12 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  Enemy.cpp
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\GameObjects\Enemy.cpp(15,27): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\GameObjects\Enemy.cpp(16,26): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
   Player.cpp
-C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\GameObjects\Player.cpp(27,27): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\GameObjects\Player.cpp(28,26): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\GameObjects\Player.cpp(30,27): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\Source\Private\GameObjects\Player.cpp(31,26): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
+  Generating Code...
   Engine.vcxproj -> C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Build\Debug\Engine.exe
   C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\ExternalLibs\DynamicLibs\SDL2.dll
   C:\Users\User\OneDrive - Nauzh\Documents\NauzhForge\Engine\ExternalLibs\DynamicLibs\SDL2_image.dll

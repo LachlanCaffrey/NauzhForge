@@ -3,7 +3,7 @@
 #define Super Character
 
 #define SCALE 3.0f
-#define SIZE (64.0f * SCALE)
+#define SIZE ((64.0f - 36.0f)* SCALE)
 #define HALF_SIZE (SIZE / 2.0f)
 
 Enemy::Enemy()
@@ -30,16 +30,14 @@ Enemy::Enemy()
 		"Content/Sprites/Kla'ed/Base/PNGs/Kla'ed - Fighter - Base.png"
 	);
 
+	Bounds* EnemyBounds = AddBounds(0.0f, SIZE);
+	EnemyBounds->m_OriginOffset = -HALF_SIZE;
+	EnemyBounds->m_Tag = "ENEMY";
 }
 
 void Enemy::OnStart()
 {
 	Super::OnStart();
-
-	static float PositionX = 640.0f;
-	PositionX += 100.0f;
-
-	SetPosition({ PositionX, -HALF_SIZE });
 
 	// Start the enemy above the screen
 	SetPosition({ 640.f, -HALF_SIZE });

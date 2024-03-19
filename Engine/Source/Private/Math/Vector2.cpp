@@ -4,7 +4,7 @@
 
 #define MinNormal 0.00001f
 
-Vector2 Vector2::operator/(const Vector2& Other)
+Vector2 Vector2::operator/(const Vector2& Other) const
 {
 	// Shorthand for signing new variable
 	Vector2 NewVector(NaN());
@@ -31,7 +31,7 @@ Vector2 Vector2::operator/=(const Vector2& Other)
 	return *this = *this / Other;
 }
 
-Vector2 Vector2::operator/(const float& Scalar)
+Vector2 Vector2::operator/(const float& Scalar) const
 {
 	if (Scalar == 0.0f) {
 		NF_LOG("Vector2", "Cannot divide by zero, returning a NaN vector2.");
